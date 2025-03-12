@@ -1,5 +1,5 @@
 -- Combines admissions and patients table
-CREATE OR REPLACE TABLE pat_ad_tbl AS 
+CREATE OR REPLACE TABLE pat_tbl_combo AS 
 SELECT
 	a.row_id,
 	a.subject_id,
@@ -22,9 +22,9 @@ JOIN patients p ON
 	p.subject_id = a.subject_id;
 
 -- Adds age column
-ALTER TABLE pat_ad_tbl ADD COLUMN age int;
-UPDATE pat_ad_tbl SET age = (EXTRACT(DAY FROM (dod - dob))::FLOAT) / 365.25;
+ALTER TABLE pat_tbl_combo ADD COLUMN age int;
+UPDATE pat_tbl_combo SET age = (EXTRACT(DAY FROM (dod - dob))::FLOAT) / 365.25;
 
 -- Removes dob and dod columns
-ALTER TABLE pat_ad_tbl DROP COLUMN dob;
-ALTER TABLE pat_ad_tbl DROP COLUMN dod;
+ALTER TABLE pat_tbl_combo DROP COLUMN dob;
+ALTER TABLE pat_tbl_combo DROP COLUMN dod;
