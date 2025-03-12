@@ -28,3 +28,6 @@ UPDATE pat_tbl_combo SET age = (EXTRACT(DAY FROM (dod - dob))::FLOAT) / 365.25;
 -- Removes dob and dod columns
 ALTER TABLE pat_tbl_combo DROP COLUMN dob;
 ALTER TABLE pat_tbl_combo DROP COLUMN dod;
+
+-- Sets patients that have an age greater than 100 to null (outliers)
+UPDATE pat_tbl_combo SET age = NULL WHERE age > 100;
