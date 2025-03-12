@@ -1,4 +1,4 @@
--- Combines admissions and patients table
+-- Combines admissions, patients, and transfer table
 CREATE OR REPLACE TABLE pat_tbl_combo AS 
 SELECT
 	a.row_id,
@@ -15,11 +15,14 @@ SELECT
 	a.diagnosis,
 	p.gender,
 	p.dob,
-	p.dod
+	p.dod,
+	t.eventtype
 FROM
 	admissions a
 JOIN patients p ON
-	p.subject_id = a.subject_id;
+	p.subject_id = a.subject_id
+JOIN transfers t ON
+	t.subject_id = p.subject_id;
 
 -- Adds age column
 ALTER TABLE pat_tbl_combo ADD COLUMN age int;
