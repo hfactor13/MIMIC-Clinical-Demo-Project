@@ -20,7 +20,7 @@ def main():
     procedures_table_query = load_query("create_procedures_table.sql")
 
     # Execute the sql queries
-    with db.connect("mimic-clinical-demo.db", "r") as con:
+    with db.connect("mimic-clinical-demo.db") as con:
         con.execute(patients_table_query)
         con.execute(procedures_table_query)
 
