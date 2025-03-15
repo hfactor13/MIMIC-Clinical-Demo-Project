@@ -10,7 +10,7 @@ def main():
     # Function loads the query before execution
     def load_query(query_name):
         with open(query_name, "r") as query:
-            create_table_query = query.readlines()
+            create_table_query = query.read()
         return create_table_query
 
     # Load the create_patients_table.sql query
