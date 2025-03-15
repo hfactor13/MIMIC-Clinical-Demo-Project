@@ -1,6 +1,5 @@
 def export_csv_files():
     from pathlib import Path
-    import pandas as pd
     import duckdb as db
 
     output_dir = Path.cwd() / "output"
