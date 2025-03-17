@@ -26,11 +26,39 @@ JOIN transfers t ON
 
 -- Adds age column
 ALTER TABLE pat_tbl_combo ADD COLUMN age int;
-UPDATE pat_tbl_combo SET age = (EXTRACT(DAY FROM (dod - dob))::FLOAT) / 365.25;
+
+UPDATE
+	pat_tbl_combo
+SET
+	age = (EXTRACT(DAY
+FROM
+	(dod - dob))::FLOAT) / 365.25;
 
 -- Removes dob and dod columns
 ALTER TABLE pat_tbl_combo DROP COLUMN dob;
+
 ALTER TABLE pat_tbl_combo DROP COLUMN dod;
 
--- Sets patients that have an age greater than 100 to null (outliers)
-UPDATE pat_tbl_combo SET age = NULL WHERE age > 100;
+-- Deletes patients that have an age greater than 100 (outliers)
+DELETE
+FROM
+	pat_tbl_combo
+WHERE
+	age > 100;
+
+-- Adds age_group bin column
+ALTER TABLE pat_tbl_combo ADD COLUMN age_groups VARCHAR(3);
+
+UPDATE
+	pat_tbl_combo
+SET
+	age_groups = CASE 
+		WHEN age < 30 THEN '20s'
+		WHEN age < 40 THEN '30s'
+		WHEN age < 50 THEN '40s'
+		WHEN age < 60 THEN '50s'
+		WHEN age < 70 THEN '60s'
+		WHEN age < 80 THEN '70s'
+		WHEN age < 90 THEN '80s'
+		ELSE '90s'
+	END;
