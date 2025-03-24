@@ -47,12 +47,12 @@ WHERE
 	age > 100;
 
 -- Adds age_group bin column
-ALTER TABLE pat_tbl_combo ADD COLUMN age_groups VARCHAR(3);
+ALTER TABLE pat_tbl_combo ADD COLUMN age_group VARCHAR(3);
 
 UPDATE
 	pat_tbl_combo
 SET
-	age_groups = CASE 
+	age_group = CASE 
 		WHEN age < 30 THEN '20s'
 		WHEN age < 40 THEN '30s'
 		WHEN age < 50 THEN '40s'
