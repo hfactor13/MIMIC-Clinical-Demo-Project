@@ -1,0 +1,43 @@
+[workspace]
+authors = ["Henry Cuzco <40706933+uiucmeche1317@users.noreply.github.com>"]
+channels = ["conda-forge", "main", "r", "msys2", "https://repo.anaconda.com/pkgs/main", "https://repo.anaconda.com/pkgs/r"]
+name = "health-analytics"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+bzip2 = { version = "==1.0.8", build = "h99b78c6_7" }
+ca-certificates = { version = "==2025.8.3", build = "hbd8a1cb_0" }
+duckdb = { version = "==1.3.2", build = "hca7485f_0" }
+icu = { version = "==75.1", build = "hfee45f7_0" }
+libblas = { version = "==3.9.0", build = "35_h10e41b3_openblas" }
+libcblas = { version = "==3.9.0", build = "35_hb3479ef_openblas" }
+libcxx = { version = "==21.1.0", build = "hf598326_1" }
+libexpat = { version = "==2.7.1", build = "hec049ff_0" }
+libffi = { version = "==3.4.6", build = "h1da3d7d_1" }
+libgfortran = { version = "==15.1.0", build = "hfdf1602_1" }
+libgfortran5 = { version = "==15.1.0", build = "hb74de2c_1" }
+liblapack = { version = "==3.9.0", build = "35_hc9a63f6_openblas" }
+liblzma = { version = "==5.8.1", build = "h39f12f2_2" }
+libmpdec = { version = "==4.0.0", build = "h5505292_0" }
+libopenblas = { version = "==0.3.30", build = "openmp_h60d53f8_2" }
+libsqlite = { version = "==3.50.4", build = "h4237e3c_0" }
+libzlib = { version = "==1.3.1", build = "h8359307_2" }
+llvm-openmp = { version = "==21.1.0", build = "hbb9b287_0" }
+ncurses = { version = "==6.5", build = "h5e97a16_3" }
+numpy = { version = "==2.3.2", build = "py313h674b998_2" }
+openssl = { version = "==3.5.2", build = "he92f556_0" }
+pandas = { version = "==2.3.2", build = "py313hd1f53c0_0" }
+pip = { version = "==25.2", build = "pyh145f28c_0" }
+python = { version = "==3.13.7", build = "h5c937ed_100_cp313" }
+python-dateutil = { version = "==2.9.0.post0", build = "pyhe01879c_2" }
+python-duckdb = { version = "==1.3.2", build = "py313hb4b7877_0" }
+python-tzdata = { version = "==2025.2", build = "pyhd8ed1ab_0" }
+python_abi = { version = "==3.13", build = "8_cp313" }
+pytz = { version = "==2025.2", build = "pyhd8ed1ab_0" }
+readline = { version = "==8.2", build = "h1d1bf99_2" }
+six = { version = "==1.17.0", build = "pyhe01879c_1" }
+tk = { version = "==8.6.13", build = "h892fb3f_2" }
+tzdata = { version = "==2025b", build = "h78e105d_0" }

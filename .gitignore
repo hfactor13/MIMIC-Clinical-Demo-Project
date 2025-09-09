@@ -5,3 +5,6 @@
 *.txt
 mimic-clinical-demo.db.wal
 __pycache__
+# pixi environments
+.pixi/*
+!.pixi/config.toml
